@@ -21,7 +21,7 @@ def toggle_fullscreen(_event):
 
 root.bind("<Escape>", toggle_fullscreen)
 
-root.title("Alex's Recipe Book")
+root.title("Lisa's Recipe Book")
 root.geometry("600x600")
 
 root.attributes('-fullscreen', fullscreen_handler)  # fullscreen on touchscreen
@@ -36,7 +36,7 @@ root.grid_rowconfigure((0, 1, 2), weight=1)
 image_size = 1500, 1500
 
 # make a frame for our image and
-title = "Alex Gray's Amazing Cookbook"
+title = "Lisa Gray's Amazing Cookbook"
 title_label = Label(root, text=title, bg="sky blue", fg="black", font=helv36)
 title_label.grid(row=0, column=0, sticky="nsew")
 canvas_frame = Frame(root, bg='Sky blue')
@@ -105,7 +105,9 @@ dessert_btn = Button(menu_button_frame, image=dessert_image, text=" Dessert ", b
                      command = lambda: add_recipe_window.open_window("Dessert"))
 dessert_btn.grid(row=0, column=4, padx=menu_padding, pady=menu_padding)
 
-
+add_new_recipe = Button(menu_button_frame, text = "Create Recipe", bg = "sky blue", font = button_font,
+                        height = 3, command = add_recipe_window.add_recipe_online)
+add_new_recipe.grid(row=1, column=0, columnspan = 5, padx=menu_padding, pady=menu_padding, sticky = 'nsew')
 ##### resize all buttons depending on the window size
 menu_button_frame.grid_columnconfigure((0, 1), weight=1)
 menu_button_frame.grid_rowconfigure((0), weight=1)
